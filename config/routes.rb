@@ -24,11 +24,11 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]
   end  
 
-  resources :users, only: [:create]
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
 
   get '/register', to: 'users#new', as: :register
-
-  resources :sessions, only: [:new, :create]
+  get '/login', to: 'sessions#new', as: :login
   delete '/logout', to: 'sessions#destroy', as: :logout
 
   # The priority is based upon order of creation: first created -> highest priority.
