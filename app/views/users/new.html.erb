@@ -1,0 +1,38 @@
+<div class="registration-form">
+<h1>Register</h1>
+
+<%= form_with(model: @user, url: users_path) do |form| %>
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name %>
+
+  <% if @user.errors.has_key?(:first_name) %>
+  <div class="alert alert-danger">First name is required</div>
+  <% end %>
+  
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name %>
+  <% if @user.errors.has_key?(:last_name) %>
+  <div class="alert alert-danger">Last name is required</div>
+  <% end %>
+  
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+  <% if @user.errors.has_key?(:email) %>
+  <div class="alert alert-danger">Email address is required</div>
+  <% end %>
+  
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+  <% if @user.errors.has_key?(:password) %>
+  <div class="alert alert-danger">Password is required</div>
+  <% end %>
+  
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %>
+  <% if @user.errors.has_key?(:password_confirmation) %>
+  <div class="alert alert-danger">Passwords must match</div>
+  <% end %>
+  
+  <%= form.submit 'Register' %>
+<% end %>
+</div>
