@@ -1,2 +1,13 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<section class="admin-dashboard">
+  <header class="page-header">
+    <h1>Admin &raquo; Dashboard</h1>
+  </header>
+
+  <div class="stats">
+    <h3>Store Statistics:</h3>
+    <ul>
+      <li>Number of Products: <%= Product.count %></li>
+      <li>Number of Categories: <%= Category.count %></li>
+    </ul>
+  </div>
+</section>
