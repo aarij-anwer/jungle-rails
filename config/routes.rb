@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create]
 
+  get '/register', to: 'users#new', as: :register
+
   resources :sessions, only: [:new, :create]
   delete '/logout', to: 'sessions#destroy', as: :logout
 
